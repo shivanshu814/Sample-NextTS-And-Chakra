@@ -11,18 +11,25 @@ const TurbineDetail = ({ turbine }) => {
       <HStack
         mt="32"
         maxW="xl"
-        borderWidth="1px"
+        //borderWidth="1px"
         borderRadius="lg"
         overflow="hidden"
-        bg={bgColor[colorMode]}
+        //bg={bgColor[colorMode]}
         boxShadow="dark-lg"
       >
-        <Image src="/wind_dummy.png" width={800} height={800} alt="logo" />
+        <Image
+          //src="/wind_dummy.png"
+          loader={() => turbine.photoUrl}
+          src={turbine.photoUrl}
+          width={800}
+          height={800}
+          alt="logo"
+        />
         <Box p="4" color={textColor[colorMode]}>
-          <Text my="1">Manufacturer:{turbine.manufacturer}</Text>
-          <Text my="1">Model: {turbine.model}</Text>
-          <Text my="1">Location:{turbine.location}</Text>
-          <Text my="1">Price:{turbine.price}</Text>
+          <Text my="2">Manufacturer:{turbine.manufacturer}</Text>
+          <Text my="2">Model: {turbine.model}</Text>
+          <Text my="2">Location:{turbine.location}</Text>
+          <Text my="2">Price:{turbine.price}</Text>
         </Box>
       </HStack>
     </Container>

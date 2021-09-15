@@ -11,7 +11,14 @@ const Navbar = () => {
   const textColor = { light: "blue.900", dark: "blue.200" };
   return (
     <HStack p="2">
-      <Box bg={bgColor[colorMode]} p="2" borderRadius="3xl">
+      <Box
+        bg={bgColor[colorMode]}
+        pt="3"
+        pb="1"
+        pr="9"
+        pl="8"
+        borderRadius="3xl"
+      >
         <Link href="/">
           <a>
             <Image src="/Nefino_logo.png" width={130} height={35} alt="logo" />

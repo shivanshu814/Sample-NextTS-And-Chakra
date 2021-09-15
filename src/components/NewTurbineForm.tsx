@@ -9,6 +9,7 @@ function NewTurbineForm(props) {
   const manifacturerInputRef = useRef<null | HTMLInputElement>(null);
   const modelInputRef = useRef<null | HTMLInputElement>(null);
   const locationInputRef = useRef<null | HTMLInputElement>(null);
+  const photoInputRef = useRef<null | HTMLInputElement>(null);
   const priceInputRef = useRef<null | HTMLTextAreaElement>(null);
 
   const router = useRouter();
@@ -19,12 +20,14 @@ function NewTurbineForm(props) {
     const enteredManifacturer = manifacturerInputRef.current.value;
     const enteredModel = modelInputRef.current.value;
     const enteredLocation = locationInputRef.current.value;
+    const enteredPhotoUrl = photoInputRef.current.value;
     const enteredPrice = priceInputRef.current.value;
 
     const turbineData = {
       manifacturer: enteredManifacturer,
       model: enteredModel,
       location: enteredLocation,
+      photoUrl: enteredPhotoUrl,
       price: enteredPrice,
     };
 
@@ -56,6 +59,10 @@ function NewTurbineForm(props) {
         <div>
           <label htmlFor="location">Location</label>
           <Input type="text" required id="location" ref={locationInputRef} />
+        </div>
+        <div>
+          <label htmlFor="photoUrl">Photo Url</label>
+          <Input type="text" required id="photoUrl" ref={photoInputRef} />
         </div>
         <div>
           <label htmlFor="price">Price</label>

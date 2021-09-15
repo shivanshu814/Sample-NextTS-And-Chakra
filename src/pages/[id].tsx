@@ -9,20 +9,20 @@ export const getStaticPaths = async () => {
       },
     };
   });
-
   return {
     paths,
-    fallback: false,
+    fallback: false, // we can pregenerate only some of our pages, especialy popular pages.
   };
 };
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-
+  //fetch data from api for one turbine with id
   return {
     props: {
       turbine: DUMMY_TURBINES[parseInt(id)],
     },
+    revalidate: 60,
   };
 };
 

@@ -23,7 +23,13 @@ const TurbineElement = ({ turbine }) => {
       bg={bgColor[colorMode]}
       boxShadow="dark-lg"
     >
-      <Image src="/wind_dummy.png" width={250} height={250} alt="logo" />
+      <Image
+        loader={() => turbine.photoUrl}
+        src={turbine.photoUrl}
+        width={250}
+        height={250}
+        alt="logo"
+      />
       <Box p="4" maxW="250" color={textColor[colorMode]}>
         <Text my="1">Manufacturer:{turbine.manufacturer}</Text>
         <Text my="1">Model: {turbine.model}</Text>
