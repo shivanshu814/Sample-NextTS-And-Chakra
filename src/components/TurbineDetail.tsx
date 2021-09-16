@@ -26,8 +26,8 @@ const TurbineDetail = ({ turbine }) => {
   return (
     <Container maxW="container.xxl" minH="86vh" centerContent>
       <HStack
-        mt="32"
-        maxW="2xl"
+        my="32"
+        maxW="6xl"
         //borderWidth="1px"
         borderRadius="lg"
         overflow="hidden"
@@ -48,8 +48,14 @@ const TurbineDetail = ({ turbine }) => {
           objectFit="cover"
           src={turbine.photoUrl}
           fallbackSrc="/wind_dummy.png"
+          display={["none", "block", "block", "block"]}
         />
-        <Box p="4" color={textColor[colorMode]}>
+        <Box
+          p="4"
+          color={textColor[colorMode]}
+          w={["80vw", "60vw", "50vw", "40vw"]}
+          textAlign="center"
+        >
           <Text my="2">Manufacturer:{turbine.manufacturer}</Text>
           <Text my="2">Model: {turbine.model}</Text>
           <Text my="2">Location:{turbine.location}</Text>

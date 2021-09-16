@@ -19,7 +19,7 @@ const TurbineElement = ({ turbine }) => {
   return (
     <LinkBox cursor="pointer" className="my-box">
       <VStack
-        maxW="sm"
+        w={["85vw", "45vw", "25vw", "20vw"]}
         borderRadius="lg"
         overflow="hidden"
         bg={bgColor[colorMode]}
@@ -38,7 +38,7 @@ const TurbineElement = ({ turbine }) => {
         alt="Windturbine"
       /> */}
         <Image
-          boxSize="250px"
+          boxSize={["350px", "400px", "350px", "300px"]}
           objectFit="cover"
           src={turbine.photoUrl}
           fallbackSrc="/wind_dummy.png"
