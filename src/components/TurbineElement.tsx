@@ -3,6 +3,7 @@ import Link from "next/link";
 //import Image from "next/image";
 import { useColorMode } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import { LinkBox, LinkOverlay } from "@chakra-ui/react";
 
 const TurbineElement = ({ turbine }) => {
   const router = useRouter();
@@ -16,14 +17,19 @@ const TurbineElement = ({ turbine }) => {
   const textColor = { light: "blue.900", dark: "blue.200" };
 
   return (
-    <VStack
-      maxW="sm"
-      borderRadius="lg"
-      overflow="hidden"
-      bg={bgColor[colorMode]}
-      boxShadow="dark-lg"
-    >
-      {/* <Image
+    <LinkBox cursor="pointer" className="my-box">
+      <VStack
+        maxW="sm"
+        borderRadius="lg"
+        overflow="hidden"
+        bg={bgColor[colorMode]}
+        boxShadow="dark-lg"
+        _hover={{
+          transform: "scale3d(1.05, 1.05, 1)",
+          transition: "0.5s",
+        }}
+      >
+        {/* <Image
         loader={() => turbine.photoUrl}
         unoptimized
         src={turbine.photoUrl}
@@ -31,31 +37,42 @@ const TurbineElement = ({ turbine }) => {
         height={250}
         alt="Windturbine"
       /> */}
-      <Image
-        boxSize="250px"
-        objectFit="cover"
-        src={turbine.photoUrl}
-        fallbackSrc="/wind_dummy.png"
-      />
-      <Box p="4" maxW="250" color={textColor[colorMode]}>
-        <Text my="1">Manufacturer:{turbine.manufacturer}</Text>
-        <Text my="1">Model: {turbine.model}</Text>
-        <Text my="1">Location: {turbine.location}</Text>
-        <Text my="1">Price:{turbine.price}</Text>
-
-        <Link href={"/" + turbine.id}>
-          <Button
-            colorScheme="green"
-            width="100%"
-            variant="outline"
-            mt="3"
-            //onClick={showDetailsHandler} // Anstatt Link zu benutzen kann mann useRoute()
-          >
-            see details
-          </Button>
-        </Link>
-      </Box>
-    </VStack>
+        <Image
+          boxSize="250px"
+          objectFit="cover"
+          src={turbine.photoUrl}
+          fallbackSrc="/wind_dummy.png"
+        />
+        <Box
+          p="4"
+          maxW="250"
+          color={textColor[colorMode]}
+          // sx={{
+          //   ".my-box:hover &": {
+          //     color: "red.600",
+          //   },
+          // }}
+        >
+          <Text my="1">Manufacturer:{turbine.manufacturer}</Text>
+          <Text my="1">Model: {turbine.model}</Text>
+          <Text my="1">Location: {turbine.location}</Text>
+          <Text my="1">Price:{turbine.price}</Text>
+          <Link href={"/" + turbine.id}>
+            <LinkOverlay>
+              <Button
+                colorScheme="green"
+                width="100%"
+                variant="outline"
+                mt="3"
+                //onClick={showDetailsHandler} // Anstatt Link zu benutzen kann mann useRoute()
+              >
+                see details
+              </Button>
+            </LinkOverlay>
+          </Link>
+        </Box>
+      </VStack>
+    </LinkBox>
   );
 };
 

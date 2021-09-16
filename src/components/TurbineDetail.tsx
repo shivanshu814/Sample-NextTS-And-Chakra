@@ -27,7 +27,7 @@ const TurbineDetail = ({ turbine }) => {
     <Container maxW="container.xxl" minH="86vh" centerContent>
       <HStack
         mt="32"
-        maxW="xl"
+        maxW="2xl"
         //borderWidth="1px"
         borderRadius="lg"
         overflow="hidden"
