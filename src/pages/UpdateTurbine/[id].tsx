@@ -70,26 +70,6 @@ const Update = ({ turbine }) => {
     router.push(`/${turbine.id}`);
   }
 
-  // async function onUpdateTurbine(enteredTurbineData) {
-  //   const client = await MongoClient.connect(
-  //     "mongodb+srv://fahri:asd123@cluster0.9dg1h.mongodb.net/turbines?retryWrites=true&w=majority"
-  //   );
-  //   const db = client.db();
-  //   const turbinesCollection = db.collection("turbines");
-  //   const turbine = await turbinesCollection.updateOne(
-  //     { _id: new ObjectId(enteredTurbineData.id) },
-  //     {
-  //       $set: {
-  //         manufacturer: enteredTurbineData.manufacturer,
-  //         model: enteredTurbineData.model,
-  //         location: enteredTurbineData.location,
-  //         photoUrl: enteredTurbineData.photoUrl,
-  //         price: enteredTurbineData.price,
-  //       },
-  //     }
-  //   );
-  // }
-
   return (
     <UpdateTurbineForm onUpdateTurbine={onUpdateTurbine} turbine={turbine} />
   );

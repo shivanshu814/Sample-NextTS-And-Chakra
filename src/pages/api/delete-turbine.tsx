@@ -2,7 +2,6 @@
 // no components
 // Request comes and this triggered
 // --->   /api/new-turbine
-// POST request is handled in /api/new-turbine
 
 const { MongoClient, ObjectId } = require("mongodb");
 

@@ -1,7 +1,6 @@
 import TurbineList from "../components/TurbineList";
 //import { DUMMY_TURBINES } from "../../data/data";
 import { MongoClient } from "mongodb";
-import { divide } from "lodash";
 
 export async function getStaticProps() {
   //fetch data from an API
