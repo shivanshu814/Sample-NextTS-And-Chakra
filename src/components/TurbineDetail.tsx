@@ -1,5 +1,5 @@
-import { Container, Text, Box, HStack, Button } from "@chakra-ui/react";
-import Image from "next/image";
+import { Container, Text, Box, HStack, Button, Image } from "@chakra-ui/react";
+//import Image from "next/image";
 import { useColorMode } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -34,7 +34,7 @@ const TurbineDetail = ({ turbine }) => {
         //bg={bgColor[colorMode]}
         boxShadow="dark-lg"
       >
-        <Image
+        {/* <Image
           //src="/wind_dummy.png"
           loader={() => turbine.photoUrl}
           unoptimized
@@ -42,6 +42,12 @@ const TurbineDetail = ({ turbine }) => {
           width={800}
           height={800}
           alt="logo"
+        /> */}
+        <Image
+          boxSize="400px"
+          objectFit="cover"
+          src={turbine.photoUrl}
+          fallbackSrc="/wind_dummy.png"
         />
         <Box p="4" color={textColor[colorMode]}>
           <Text my="2">Manufacturer:{turbine.manufacturer}</Text>
