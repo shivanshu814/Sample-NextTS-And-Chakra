@@ -49,6 +49,7 @@ export const getStaticProps = async (context) => {
         price: turbine.price,
         id: turbine._id.toString(),
       },
+      revalidate: 1,
     },
   };
 };
