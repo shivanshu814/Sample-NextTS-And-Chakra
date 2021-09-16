@@ -4,7 +4,8 @@ import { Container, chakra } from "@chakra-ui/react";
 import { Textarea } from "@chakra-ui/textarea";
 import { useRef } from "react";
 
-function NewTurbineForm(props) {
+function UpdateTurbineForm(props) {
+  console.log("turbine in form---->", props.turbine);
   const manufacturerInputRef = useRef<null | HTMLInputElement>(null);
   const modelInputRef = useRef<null | HTMLInputElement>(null);
   const locationInputRef = useRef<null | HTMLInputElement>(null);
@@ -27,8 +28,7 @@ function NewTurbineForm(props) {
       photoUrl: enteredPhotoUrl,
       price: enteredPrice,
     };
-
-    props.onAddTurbine(turbineData);
+    props.onUpdateTurbine(turbineData);
   }
 
   return (
@@ -46,27 +46,51 @@ function NewTurbineForm(props) {
             required
             id="manufacturer"
             ref={manufacturerInputRef}
+            defaultValue={props.turbine.manufacturer}
           />
         </div>
         <div>
           <label htmlFor="model">Model</label>
-          <Input type="text" required id="model" ref={modelInputRef} />
+          <Input
+            type="text"
+            required
+            id="model"
+            ref={modelInputRef}
+            defaultValue={props.turbine.model}
+          />
         </div>
         <div>
           <label htmlFor="location">Location</label>
-          <Input type="text" required id="location" ref={locationInputRef} />
+          <Input
+            type="text"
+            required
+            id="location"
+            ref={locationInputRef}
+            defaultValue={props.turbine.location}
+          />
         </div>
         <div>
           <label htmlFor="photoUrl">Photo Url</label>
-          <Input type="text" required id="photoUrl" ref={photoInputRef} />
+          <Input
+            type="text"
+            required
+            id="photoUrl"
+            ref={photoInputRef}
+            defaultValue={props.turbine.photoUrl}
+          />
         </div>
         <div>
           <label htmlFor="price">Price</label>
-          <Textarea id="price" required ref={priceInputRef}></Textarea>
+          <Textarea
+            id="price"
+            required
+            ref={priceInputRef}
+            defaultValue={props.turbine.price}
+          ></Textarea>
         </div>
         <div>
           <Button type="submit" w="100%" my="2">
-            Add Turbine
+            Update
           </Button>
         </div>
       </chakra.form>
@@ -74,4 +98,4 @@ function NewTurbineForm(props) {
   );
 }
 
-export default NewTurbineForm;
+export default UpdateTurbineForm;

@@ -1,6 +1,8 @@
 import NewTurbineForm from "../components/NewTurbineForm";
+import { useRouter } from "next/router";
 
 function NewTurbine() {
+  const router = useRouter();
   async function onAddTurbine(enteredTurbineData) {
     const response = await fetch("/api/new-turbine", {
       method: "POST",
@@ -11,6 +13,7 @@ function NewTurbine() {
     });
     const data = await response.json();
     console.log("data: in New Turbine", data);
+    router.push("/");
   }
 
   return <NewTurbineForm onAddTurbine={onAddTurbine} />;

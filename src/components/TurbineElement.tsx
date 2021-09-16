@@ -25,6 +25,7 @@ const TurbineElement = ({ turbine }) => {
     >
       <Image
         loader={() => turbine.photoUrl}
+        unoptimized
         src={turbine.photoUrl}
         width={250}
         height={250}
@@ -36,15 +37,17 @@ const TurbineElement = ({ turbine }) => {
         <Text my="1">Location: {turbine.location}</Text>
         <Text my="1">Price:{turbine.price}</Text>
 
-        <Button
-          colorScheme="green"
-          width="100%"
-          variant="outline"
-          mt="3"
-          onClick={showDetailsHandler}
-        >
-          see details
-        </Button>
+        <Link href={"/" + turbine.id}>
+          <Button
+            colorScheme="green"
+            width="100%"
+            variant="outline"
+            mt="3"
+            //onClick={showDetailsHandler} // Anstatt Link zu benutzen kann mann useRoute()
+          >
+            see details
+          </Button>
+        </Link>
       </Box>
     </VStack>
   );

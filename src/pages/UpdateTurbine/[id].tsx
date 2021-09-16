@@ -1,5 +1,5 @@
-import TurbineDetail from "../components/TurbineDetail";
-import { DUMMY_TURBINES } from "../../data/data";
+import UpdateTurbineForm from "../../components/UpdateTurbineForm";
+import { useRouter } from "next/router";
 import { MongoClient, ObjectId } from "mongodb";
 
 export const getStaticPaths = async () => {
@@ -53,8 +53,46 @@ export const getStaticProps = async (context) => {
   };
 };
 
-const Detail = ({ turbine }) => {
-  return <TurbineDetail turbine={turbine} />;
+const Update = ({ turbine }) => {
+  const router = useRouter();
+  async function onUpdateTurbine(enteredTurbineData) {
+    enteredTurbineData.id = turbine.id;
+
+    const response = await fetch("/api/update-turbine", {
+      method: "PUT",
+      body: JSON.stringify(enteredTurbineData),
+      headers: {
+        "Content-type": "aplication/json",
+      },
+    });
+    const data = await response.json();
+
+    router.push(`/${turbine.id}`);
+  }
+
+  // async function onUpdateTurbine(enteredTurbineData) {
+  //   const client = await MongoClient.connect(
+  //     "mongodb+srv://fahri:asd123@cluster0.9dg1h.mongodb.net/turbines?retryWrites=true&w=majority"
+  //   );
+  //   const db = client.db();
+  //   const turbinesCollection = db.collection("turbines");
+  //   const turbine = await turbinesCollection.updateOne(
+  //     { _id: new ObjectId(enteredTurbineData.id) },
+  //     {
+  //       $set: {
+  //         manufacturer: enteredTurbineData.manufacturer,
+  //         model: enteredTurbineData.model,
+  //         location: enteredTurbineData.location,
+  //         photoUrl: enteredTurbineData.photoUrl,
+  //         price: enteredTurbineData.price,
+  //       },
+  //     }
+  //   );
+  // }
+
+  return (
+    <UpdateTurbineForm onUpdateTurbine={onUpdateTurbine} turbine={turbine} />
+  );
 };
 
-export default Detail;
+export default Update;
