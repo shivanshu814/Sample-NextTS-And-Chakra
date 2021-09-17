@@ -22,7 +22,7 @@ export async function getStaticProps() {
         id: turbine._id.toString(),
       })),
     },
-    //revalidate: 1, // Update Page every minute
+    revalidate: 1, // Update Page every minute
   };
 }
 
