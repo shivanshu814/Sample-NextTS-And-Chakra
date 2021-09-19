@@ -65,8 +65,8 @@ function NewTurbineForm(props) {
           <Textarea id="price" required ref={priceInputRef}></Textarea>
         </div>
         <div>
-          <Button type="submit" w="100%" my="2">
-            Add Turbine
+          <Button type="submit" w="100%" my="2" colorScheme="blue">
+            Add
           </Button>
         </div>
       </chakra.form>
