@@ -28,7 +28,7 @@ const Navbar = () => {
       <Spacer />
       <DarkModeSwitch />
       <Link href="/NewTurbine">
-        <Button colorScheme="teal" variant="outline">
+        <Button colorScheme="blue" variant="outline">
           Add Turbine
         </Button>
       </Link>

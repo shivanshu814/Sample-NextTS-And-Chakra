@@ -1,6 +1,9 @@
 import TurbineList from "../components/TurbineList";
 //import { DUMMY_TURBINES } from "../../data/data";
 import { MongoClient } from "mongodb";
+import React, { useState } from "react";
+import SearchComponent from "../components/SearchComponent.";
+import { Container } from "@chakra-ui/layout";
 
 // export async function getStaticProps() {
 //   //fetch data from an API
@@ -53,6 +56,15 @@ export const getServerSideProps = async (context) => {
 };
 
 const Index = ({ turbines }) => {
-  return <TurbineList turbines={turbines} />;
+  const [suchWort, setSuchWort] = useState("");
+  const handleSuche = (suchWort) => {
+    setSuchWort(suchWort);
+  };
+  return (
+    <Container maxW="container.xxl" centerContent minH="85vh">
+      <SearchComponent handleSuche={handleSuche} />
+      <TurbineList suchWort={suchWort} turbines={turbines} />
+    </Container>
+  );
 };
 export default Index;

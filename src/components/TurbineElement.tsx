@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { LinkBox, LinkOverlay } from "@chakra-ui/react";
 
 const TurbineElement = ({ turbine }) => {
+  //console.log(turbine);
   const router = useRouter();
 
   function showDetailsHandler() {
