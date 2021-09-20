@@ -8,12 +8,8 @@ const TurbineList = ({ turbines, suchWort }) => {
   const renderedTurbinen = turbines.map((turbine, index) => {
     if (turbine.manufacturer.toLowerCase().includes(suchWort.toLowerCase())) {
       result = result + 1;
-      console.log(result);
-      return (
-        <Center>
-          <TurbineElement key={index} turbine={turbine} />
-        </Center>
-      );
+      //console.log(result);
+      return <TurbineElement key={index} turbine={turbine} />;
     } else {
       return null;
     }

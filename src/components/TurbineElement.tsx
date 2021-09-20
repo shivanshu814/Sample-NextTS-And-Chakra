@@ -3,7 +3,7 @@ import Link from "next/link";
 //import Image from "next/image";
 import { useColorMode } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { LinkBox, LinkOverlay } from "@chakra-ui/react";
+import { LinkBox, LinkOverlay, AspectRatio } from "@chakra-ui/react";
 
 const TurbineElement = ({ turbine }) => {
   //console.log(turbine);
@@ -20,7 +20,7 @@ const TurbineElement = ({ turbine }) => {
   return (
     <LinkBox cursor="pointer" className="my-box">
       <VStack
-        w={["85vw", "45vw", "25vw", "20vw"]}
+        w={["85vw", "45vw", "25vw", "18vw"]}
         borderRadius="lg"
         overflow="hidden"
         bg={bgColor[colorMode]}
@@ -38,12 +38,14 @@ const TurbineElement = ({ turbine }) => {
         height={250}
         alt="Windturbine"
       /> */}
+
         <Image
           boxSize={["350px", "400px", "350px", "300px"]}
           objectFit="cover"
           src={turbine.photoUrl}
           fallbackSrc="/wind_dummy.png"
         />
+
         <Box
           p="4"
           maxW="250"

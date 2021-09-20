@@ -58,13 +58,16 @@ export const getServerSideProps = async (context) => {
   const req = context.req;
   const res = context.res;
   const id = context.params.id;
+  console.log(id);
   //fetch data from api
   const client = await MongoClient.connect(
     "mongodb+srv://fahri:asd123@cluster0.9dg1h.mongodb.net/turbines?retryWrites=true&w=majority"
   );
   const db = client.db();
   const turbinesCollection = db.collection("turbines");
-  const turbine = await turbinesCollection.findOne({ _id: new ObjectId(id) });
+  const turbine = await turbinesCollection.findOne({
+    _id: new ObjectId(id),
+  });
 
   client.close();
   return {

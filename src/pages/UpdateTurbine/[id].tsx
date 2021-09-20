@@ -1,6 +1,6 @@
-import UpdateTurbineForm from "../../components/UpdateTurbineForm";
 import { useRouter } from "next/router";
 import { MongoClient, ObjectId } from "mongodb";
+import FormGenerator from "../../components/FormComponents/FormGenerator";
 
 // export const getStaticPaths = async () => {
 //   //fetch data from api for the id's
@@ -99,7 +99,11 @@ const Update = ({ turbine }) => {
   }
 
   return (
-    <UpdateTurbineForm onUpdateTurbine={onUpdateTurbine} turbine={turbine} />
+    <FormGenerator
+      onSubmit={onUpdateTurbine}
+      turbine={turbine}
+      task="Update Turbine"
+    />
   );
 };
 

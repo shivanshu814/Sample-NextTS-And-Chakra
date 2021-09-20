@@ -1,5 +1,5 @@
-import NewTurbineForm from "../components/NewTurbineForm";
 import { useRouter } from "next/router";
+import FormGenerator from "../components/FormComponents/FormGenerator";
 
 function NewTurbine() {
   const router = useRouter();
@@ -16,7 +16,7 @@ function NewTurbine() {
     router.push("/");
   }
 
-  return <NewTurbineForm onAddTurbine={onAddTurbine} />;
+  return <FormGenerator onSubmit={onAddTurbine} task="Add New Turbine" />;
 }
 
 export default NewTurbine;

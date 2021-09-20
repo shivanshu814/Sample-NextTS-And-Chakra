@@ -2,7 +2,7 @@ import TurbineList from "../components/TurbineList";
 //import { DUMMY_TURBINES } from "../../data/data";
 import { MongoClient } from "mongodb";
 import React, { useState } from "react";
-import SearchComponent from "../components/SearchComponent.";
+import SearchComponent from "../components/SearchComponent";
 import { Container } from "@chakra-ui/layout";
 
 // export async function getStaticProps() {
