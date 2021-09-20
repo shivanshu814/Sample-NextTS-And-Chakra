@@ -1,4 +1,13 @@
-import { Container, Text, Box, HStack, Button, Image } from "@chakra-ui/react";
+import {
+  Container,
+  Text,
+  Box,
+  HStack,
+  Button,
+  Image,
+  VStack,
+  Stack,
+} from "@chakra-ui/react";
 //import Image from "next/image";
 import { useColorMode } from "@chakra-ui/react";
 import { useRouter } from "next/router";
@@ -25,14 +34,16 @@ const TurbineDetail = ({ turbine }) => {
 
   return (
     <Container maxW="container.xxl" minH="86vh" centerContent>
-      <HStack
-        my="32"
+      <Stack
+        mt="32"
+        mb="8"
         maxW="6xl"
         //borderWidth="1px"
         borderRadius="lg"
         overflow="hidden"
         //bg={bgColor[colorMode]}
         boxShadow="dark-lg"
+        direction={["column", "row", "row", "row"]}
       >
         {/* <Image
           //src="/wind_dummy.png"
@@ -48,7 +59,7 @@ const TurbineDetail = ({ turbine }) => {
           objectFit="cover"
           src={turbine.photoUrl}
           fallbackSrc="/wind_dummy.png"
-          display={["none", "block", "block", "block"]}
+          //display={["none", "block", "block", "block"]}
         />
         <Box
           p="4"
@@ -76,7 +87,47 @@ const TurbineDetail = ({ turbine }) => {
             </Button>
           </Link>
         </Box>
-      </HStack>
+      </Stack>
+      <VStack alignItems="flex-start" maxW="5xl" mb="32">
+        <Text>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          impedit reprehenderit veritatis exercitationem architecto accusantium
+          voluptatibus, nemo natus sed sequi officiis at. Delectus nam quae
+          asperiores eos velit, blanditiis aperiam, dolorem fugit soluta rerum
+          repellendus voluptatum voluptate numquam? Fugit, expedita minus cum
+          exercitationem architecto dignissimos nemo sapiente? Explicabo autem
+          porro quam, repudiandae nihil necessitatibus voluptates dignissimos
+          exercitationem dolores natus sapiente accusantium eaque. Cumque, sunt
+          earum? Accusantium, porro. Amet odio, eos, sapiente magni ipsum
+          perferendis laboriosam soluta ipsam cum debitis optio cupiditate ipsa
+          facilis ullam. Ab itaque labore sequi facilis perspiciatis explicabo
+          ut consectetur ullam deleniti assumenda deserunt quasi qui excepturi
+          minus, atque doloremque officiis doloribus! Saepe voluptatibus totam,
+          possimus et ea error adipisci quas vel officia voluptatem facilis,
+          consequuntur qui, ullam consectetur est hic dolorum corrupti vero
+          dicta doloribus eaque? Laboriosam repellat assumenda cupiditate
+          recusandae ducimus obcaecati voluptatum iusto est.
+        </Text>
+        <Text>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          impedit reprehenderit veritatis exercitationem architecto accusantium
+          voluptatibus, nemo natus sed sequi officiis at. Delectus nam quae
+          asperiores eos velit, blanditiis aperiam, dolorem fugit soluta rerum
+          repellendus voluptatum voluptate numquam? Fugit, expedita minus cum
+          exercitationem architecto dignissimos nemo sapiente? Explicabo autem
+          porro quam, repudiandae nihil necessitatibus voluptates dignissimos
+          exercitationem dolores natus sapiente accusantium eaque. Cumque, sunt
+          earum? Accusantium, porro. Amet odio, eos, sapiente magni ipsum
+          perferendis laboriosam soluta ipsam cum debitis optio cupiditate ipsa
+          facilis ullam. Ab itaque labore sequi facilis perspiciatis explicabo
+          ut consectetur ullam deleniti assumenda deserunt quasi qui excepturi
+          minus, atque doloremque officiis doloribus! Saepe voluptatibus totam,
+          possimus et ea error adipisci quas vel officia voluptatem facilis,
+          consequuntur qui, ullam consectetur est hic dolorum corrupti vero
+          dicta doloribus eaque? Laboriosam repellat assumenda cupiditate
+          recusandae ducimus obcaecati voluptatum iusto est.
+        </Text>
+      </VStack>
     </Container>
   );
 };
