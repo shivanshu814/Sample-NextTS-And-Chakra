@@ -11,6 +11,7 @@ import {
   Input,
   Button,
   useColorModeValue,
+  Checkbox,
 } from "@chakra-ui/react";
 
 function Form(props) {
@@ -43,9 +44,6 @@ function Form(props) {
                 ref={props.manufacturerInputRef}
                 defaultValue={props.turbine ? props.turbine.manufacturer : " "}
                 onChange={(e) => props.setPrewManufacturer(e.target.value)}
-                borderRadius="0%"
-                bg="gray.50"
-                color={color}
               />
             </FormControl>
           </GridItem>
@@ -58,9 +56,6 @@ function Form(props) {
                 ref={props.modelInputRef}
                 defaultValue={props.turbine ? props.turbine.model : ""}
                 onChange={(e) => props.setPrewModel(e.target.value)}
-                borderRadius="0%"
-                bg="gray.50"
-                color={color}
               />
             </FormControl>
           </GridItem>
@@ -73,9 +68,6 @@ function Form(props) {
                 ref={props.locationInputRef}
                 defaultValue={props.turbine ? props.turbine.location : ""}
                 onChange={(e) => props.setPrewLocation(e.target.value)}
-                borderRadius="0%"
-                bg="gray.50"
-                color={color}
               />
             </FormControl>
           </GridItem>
@@ -88,9 +80,6 @@ function Form(props) {
                 ref={props.priceInputRef}
                 defaultValue={props.turbine ? props.turbine.price : ""}
                 onChange={(e) => props.setPrewPrice(e.target.value)}
-                borderRadius="0%"
-                bg="gray.50"
-                color={color}
               />
             </FormControl>
           </GridItem>
@@ -103,21 +92,20 @@ function Form(props) {
                 ref={props.photoInputRef}
                 defaultValue={props.turbine ? props.turbine.photoUrl : ""}
                 onChange={(e) => props.setPrewPhotoUrl(e.target.value)}
-                borderRadius="0%"
-                bg="gray.50"
-                color={color}
               />
             </FormControl>
           </GridItem>
-
+          <Checkbox> I have controlled the Preview</Checkbox>
           <GridItem colSpan={2}>
             <div>
               <Button
                 type="submit"
                 w="100%"
                 my="2"
-                colorScheme="yellow"
-                borderRadius="0%"
+                //colorScheme="brand"
+                variant="primary"
+                borderRadius="0"
+                //_focus={{ ring: 8 }}
               >
                 {props.buttonLabel}
               </Button>

@@ -47,8 +47,11 @@ function FormGenerator(props) {
   );
 
   return (
-    <Container minH="88vh" minW="95vw">
-      <Flex direction={["column-reverse", "column-reverse", "row", "row"]}>
+    <Container minW="95vw" p={["0", "4", "8", "10"]}>
+      <Flex
+        h={["auto", "auto", "80vh"]}
+        direction={["column-reverse", "column-reverse", "row", "row"]}
+      >
         <Form
           submitHandler={submitHandler}
           manufacturerInputRef={manufacturerInputRef}
