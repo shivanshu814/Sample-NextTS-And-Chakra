@@ -1,4 +1,4 @@
-import { VStack, Text, Box, Button, Image } from "@chakra-ui/react";
+import { VStack, Text, Box, Button, Image, Badge } from "@chakra-ui/react";
 import Link from "next/link";
 //import Image from "next/image";
 import { useColorMode } from "@chakra-ui/react";
@@ -20,7 +20,7 @@ const TurbineElement = ({ turbine }) => {
   return (
     <LinkBox cursor="pointer" className="my-box">
       <VStack
-        w={["85vw", "45vw", "25vw", "18vw"]}
+        w={["80vw", "45vw", "25vw", "18vw"]}
         borderRadius="lg"
         overflow="hidden"
         bg={bgColor[colorMode]}
@@ -40,7 +40,8 @@ const TurbineElement = ({ turbine }) => {
       /> */}
 
         <Image
-          boxSize={["350px", "400px", "350px", "300px"]}
+          //boxSize={["350px", "400px", "350px", "300px"]}
+          boxSize={["80vw", "45vw", "25vw", "25vw"]}
           objectFit="cover"
           src={turbine.photoUrl}
           fallbackSrc="/wind_dummy.png"
@@ -56,6 +57,9 @@ const TurbineElement = ({ turbine }) => {
           //   },
           // }}
         >
+          {/* <Badge colorScheme="red" position="absolute" top="6" right="4"> 
+            New
+          </Badge>*/}
           <Text my="1">Manufacturer:{turbine.manufacturer}</Text>
           <Text my="1">Model: {turbine.model}</Text>
           <Text my="1">Location: {turbine.location}</Text>

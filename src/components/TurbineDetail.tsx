@@ -1,6 +1,7 @@
 import {
   Container,
   Text,
+  Heading,
   Box,
   HStack,
   Button,
@@ -35,15 +36,15 @@ const TurbineDetail = ({ turbine }) => {
   return (
     <Container maxW="container.xxl" minH="86vh" centerContent>
       <Stack
-        mt="32"
+        mt="16"
         mb="8"
-        maxW="6xl"
+        w={["85vw", "85vw", "85vw", "85vw", "85vw"]}
         //borderWidth="1px"
         borderRadius="lg"
         overflow="hidden"
         //bg={bgColor[colorMode]}
         boxShadow="dark-lg"
-        direction={["column", "row", "row", "row"]}
+        direction={["column", "row", "row", "row", "row"]}
       >
         {/* <Image
           //src="/wind_dummy.png"
@@ -55,22 +56,25 @@ const TurbineDetail = ({ turbine }) => {
           alt="logo"
         /> */}
         <Image
-          boxSize="400px"
+          boxSize={["85vw", "45vw", "45vw", "45vw", "45vw"]}
           objectFit="cover"
           src={turbine.photoUrl}
           fallbackSrc="/wind_dummy.png"
           //display={["none", "block", "block", "block"]}
         />
-        <Box
+        <VStack
           p="4"
           color={textColor[colorMode]}
-          w={["80vw", "60vw", "50vw", "40vw"]}
+          //w={["80vw", "60vw", "50vw", "40vw"]}
+          w="100%"
           textAlign="center"
+          justifyContent="center"
+          spacing="4"
         >
-          <Text my="2">Manufacturer:{turbine.manufacturer}</Text>
-          <Text my="2">Model: {turbine.model}</Text>
-          <Text my="2">Location:{turbine.location}</Text>
-          <Text my="2">Price:{turbine.price}</Text>
+          <Text>Manufacturer:{turbine.manufacturer}</Text>
+          <Text>Model: {turbine.model}</Text>
+          <Text>Location:{turbine.location}</Text>
+          <Text>Price:{turbine.price}</Text>
           <Button
             colorScheme="red"
             width="100%"
@@ -86,9 +90,10 @@ const TurbineDetail = ({ turbine }) => {
               update
             </Button>
           </Link>
-        </Box>
+        </VStack>
       </Stack>
-      <VStack alignItems="flex-start" maxW="5xl" mb="32">
+      <VStack alignItems="flex-start" px={["8", "16", "32", "32"]} mb="32">
+        <Heading>Lorem ipsum dolor sit.</Heading>
         <Text>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
           impedit reprehenderit veritatis exercitationem architecto accusantium
@@ -98,16 +103,20 @@ const TurbineDetail = ({ turbine }) => {
           exercitationem architecto dignissimos nemo sapiente? Explicabo autem
           porro quam, repudiandae nihil necessitatibus voluptates dignissimos
           exercitationem dolores natus sapiente accusantium eaque. Cumque, sunt
-          earum? Accusantium, porro. Amet odio, eos, sapiente magni ipsum
-          perferendis laboriosam soluta ipsam cum debitis optio cupiditate ipsa
-          facilis ullam. Ab itaque labore sequi facilis perspiciatis explicabo
-          ut consectetur ullam deleniti assumenda deserunt quasi qui excepturi
-          minus, atque doloremque officiis doloribus! Saepe voluptatibus totam,
-          possimus et ea error adipisci quas vel officia voluptatem facilis,
-          consequuntur qui, ullam consectetur est hic dolorum corrupti vero
-          dicta doloribus eaque? Laboriosam repellat assumenda cupiditate
-          recusandae ducimus obcaecati voluptatum iusto est.
+          earum? Accusantium, porro.
         </Text>
+        <Text>
+          Amet odio, eos, sapiente magni ipsum perferendis laboriosam soluta
+          ipsam cum debitis optio cupiditate ipsa facilis ullam. Ab itaque
+          labore sequi facilis perspiciatis explicabo ut consectetur ullam
+          deleniti assumenda deserunt quasi qui excepturi minus, atque
+          doloremque officiis doloribus! Saepe voluptatibus totam, possimus et
+          ea error adipisci quas vel officia voluptatem facilis, consequuntur
+          qui, ullam consectetur est hic dolorum corrupti vero dicta doloribus
+          eaque? Laboriosam repellat assumenda cupiditate recusandae ducimus
+          obcaecati voluptatum iusto est.
+        </Text>
+        <Heading>Lorem ipsum dolor sit.</Heading>
         <Text>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
           impedit reprehenderit veritatis exercitationem architecto accusantium

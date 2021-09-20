@@ -3,12 +3,13 @@ import Image from "next/image";
 import { Box, HStack, Spacer } from "@chakra-ui/layout";
 import { DarkModeSwitch } from "../DarkModeSwitch";
 import { Button } from "@chakra-ui/button";
-import { useColorMode } from "@chakra-ui/react";
+import { useColorMode, useBreakpointValue } from "@chakra-ui/react";
 
 const Navbar = () => {
   const { colorMode } = useColorMode();
   const bgColor = { light: "gray.100", dark: "gray.500" };
   const textColor = { light: "blue.900", dark: "blue.200" };
+  const buttonText = useBreakpointValue({ base: "Add", sm: "Add Turbine" });
   return (
     <HStack p="2">
       <Box
@@ -28,8 +29,12 @@ const Navbar = () => {
       <Spacer />
       <DarkModeSwitch />
       <Link href="/NewTurbine">
-        <Button colorScheme="blue" variant="outline">
-          Add Turbine
+        <Button
+          colorScheme="blue"
+          variant="outline"
+          fontSize={["sm", "md", "lg"]}
+        >
+          {buttonText}
         </Button>
       </Link>
     </HStack>

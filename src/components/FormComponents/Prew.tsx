@@ -33,7 +33,7 @@ const Prew = (props) => {
         </Text>
       </VStack>
       <VStack
-        w={["85vw", "45vw", "25vw", "18vw"]}
+        w={["60vw", "30vw", "25vw", "18vw"]}
         borderRadius="lg"
         overflow="hidden"
         boxShadow="dark-lg"
@@ -46,7 +46,7 @@ const Prew = (props) => {
         color={textColorCard}
       >
         <Image
-          boxSize={["350px", "400px", "350px", "300px"]}
+          boxSize={["60vw", "30vw", "25vw", "18vw"]}
           objectFit="cover"
           src={props.prewPhotoUrl}
           fallbackSrc="/wind_dummy.png"
