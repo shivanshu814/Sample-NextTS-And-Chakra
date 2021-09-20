@@ -10,10 +10,12 @@ import {
   VStack,
   Input,
   Button,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 function Form(props) {
   const colSpan = useBreakpointValue({ base: 2, md: 1 });
+  const color = useColorModeValue("gray.900", "gray.700");
   return (
     <VStack w="full" h="full" p="10" alignItems="strech" spacing="16">
       <VStack spacing={3} alignItems="flex-start">
@@ -43,6 +45,7 @@ function Form(props) {
                 onChange={(e) => props.setPrewManufacturer(e.target.value)}
                 borderRadius="0%"
                 bg="gray.50"
+                color={color}
               />
             </FormControl>
           </GridItem>
@@ -57,6 +60,7 @@ function Form(props) {
                 onChange={(e) => props.setPrewModel(e.target.value)}
                 borderRadius="0%"
                 bg="gray.50"
+                color={color}
               />
             </FormControl>
           </GridItem>
@@ -71,6 +75,7 @@ function Form(props) {
                 onChange={(e) => props.setPrewLocation(e.target.value)}
                 borderRadius="0%"
                 bg="gray.50"
+                color={color}
               />
             </FormControl>
           </GridItem>
@@ -85,6 +90,7 @@ function Form(props) {
                 onChange={(e) => props.setPrewPrice(e.target.value)}
                 borderRadius="0%"
                 bg="gray.50"
+                color={color}
               />
             </FormControl>
           </GridItem>
@@ -99,6 +105,7 @@ function Form(props) {
                 onChange={(e) => props.setPrewPhotoUrl(e.target.value)}
                 borderRadius="0%"
                 bg="gray.50"
+                color={color}
               />
             </FormControl>
           </GridItem>
