@@ -4,7 +4,7 @@
 
 
 <img src="photos/turbine_list.png"  title="CSS">
-<img src="photos/turbine_list_white.png" height="60" title="CSS">
-<img src="photos/add_turbine.png" height="60" title="CSS">
-<img src="photos/add_turbine_white.png" height="60" title="CSS">
-<img src="photos/turbine.png" height="60" title="CSS">
+<img src="photos/turbine_list_white.png"  title="CSS">
+<img src="photos/add_turbine.png"  title="CSS">
+<img src="photos/add_turbine_white.png" title="CSS">
+<img src="photos/turbine.png" title="CSS">
